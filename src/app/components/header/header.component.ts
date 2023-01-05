@@ -23,6 +23,7 @@ export class HeaderComponent {
           600,
           "Argentina Programa",
           "#YoProgramo", 
+          "4ta Edicion"
           
         )
         .start()
