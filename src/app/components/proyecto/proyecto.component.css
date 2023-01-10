@@ -1,0 +1,21 @@
+.row{
+    padding: 20px;
+}
+
+.container {
+    width: auto;
+
+}
+
+.parte1 .parte2{
+    display: inline-block;
+    text-align: justify;
+}
+
+h1,p{
+    color: #fefefe;
+}
+
+.img-project{
+    box-shadow: 10px 10px 30px #000000;
+}
