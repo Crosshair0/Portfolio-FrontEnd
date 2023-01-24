@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/service/token.service';
 // @ts-ignore
 import Typewriter from 't-writer.js';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +11,9 @@ import Typewriter from 't-writer.js';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+isLogged = false;
 
-    constructor(){ }
+    constructor(private router:Router,private tokenService: TokenService){ }
 
     ngOnInit():void {
       const target = document.querySelector('.tw')
@@ -28,6 +32,19 @@ export class HeaderComponent {
         )
         .start()
             
+         if(this.tokenService.getToken()) {
+            this.isLogged = true;
+
+         } else {
+          this.isLogged = false;
+         }
+
+         
     }
+
+    onLogOut():void{
+      this.tokenService.logOut();
+      window.location.reload();
+     }
 
 }

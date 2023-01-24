@@ -39,9 +39,9 @@ h1{
 @media(min-width:576px){
     #fotodeperfil{
         position: absolute;
-        width: 15%;
+        width: 12%;
         border-radius: 100%;
-        box-shadow: 3px 3px 3px grey;
+        box-shadow: 3px 3px 3px rgb(0, 0, 0);
         left: 2%;
         top: 800px;
     }
@@ -51,8 +51,8 @@ h1{
         position: absolute;
         width: 30%;
         border-radius: 100%;
-        box-shadow: 3px 3px 3px grey;
+        box-shadow: 3px 3px 3px #000000;
         left: 35%;
-        top: 850px;
+        top: 720px;
     }
 }
