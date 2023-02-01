@@ -1,26 +1,42 @@
 <div class="row p-1">
-    <h1 class="">Experiencia laboral</h1>
-    <div class="col-lg-11 ps-5">
-        <ul>
-            <li>
-                <h1>trabajo 1</h1> - <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde culpa incidunt nobis! Ratione quam iste rem temporibus ea, excepturi nostrum est inventore alias nam optio autem possimus porro quasi eum.
-            </p>
-        </ul>
-        <ul>
-            <li>
-                <h1>trabajo 2</h1> - <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde culpa incidunt nobis! Ratione quam iste rem temporibus ea, excepturi nostrum est inventore alias nam optio autem possimus porro quasi eum.
-            </p>
-        </ul>
-        <ul>
-            <li>
-                <h1>trabajo 3</h1> - <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde culpa incidunt nobis! Ratione quam iste rem temporibus ea, excepturi nostrum est inventore alias nam optio autem possimus porro quasi eum.
-            </p>
-        </ul>
-    </div>
+  <h1 class="">Experiencia laboral</h1>
+  <div class="col-lg-2">
+    <button
+      type="button"
+      class="btn btn-light"
+      routerLink="/nuevaexp"
+      *ngIf="isLogged"
+    >
+      Nueva Experiencia
+    </button>
+  </div>
+  <div class="col-lg-1"></div>
+  <div class="col-lg-11">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let Experiencia of expe">
+          <td>
+            <h2>{{ Experiencia.nombreExp }}</h2>
+          </td>
+          <td>{{ Experiencia.descripcionExp }}</td>
+          <td *ngIf="isLogged">
+            <button
+              class="btn btn-light"
+              routerLink="/editexp/{{ Experiencia.id }}"
+            >
+              <i class="bi bi-pencil-fill me-1"></i>Editar
+            </button>
+          </td>
+          <td *ngIf="isLogged">
+            <button
+              class="btn btn-danger"
+              (click)="delete(Experiencia.id)"
+            >
+              <i class="bi bi-trash-fill"></i>Borrar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
