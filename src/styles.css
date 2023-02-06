@@ -1,3 +1,4 @@
+
 .animated-gradient {
   animation: animateBg 15s linear infinite;
   background-image: linear-gradient(0deg,#811818,#551111,#2d0b0b,#120503,#2d0b0b,#551111,#811818,#811818,#551111);

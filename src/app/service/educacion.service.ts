@@ -7,7 +7,7 @@ import { Educacion } from '../models/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  URL = "http://localhost:8080/educacion/";
+  URL = "https://backendafp.onrender.com/educacion/";
 
   constructor(private httpClient: HttpClient) { }
 
