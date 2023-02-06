@@ -5,3 +5,9 @@
 h1{
     color: white;
 }
+
+.circulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
