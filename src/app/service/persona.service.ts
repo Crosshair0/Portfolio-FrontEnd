@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { persona } from '../models/persona.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { persona } from '../models/persona.model';
 })
 
 export class PersonaService {
-  URL = 'https://backendafp.onrender.com/personas/' ;
+  URL = environment.URL + 'personas/' ;
 
   constructor(private http: HttpClient) { }
 
