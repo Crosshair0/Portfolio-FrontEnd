@@ -1,12 +1,38 @@
 <div class="row">
     <h1>Proyectos Realizados:</h1>
-    <div class="container">
-        <div class="col-sm-12 col-md-7 col-lg-7 mt-2 parte1">
-            <h1>Noticias de distintos paises y topicos</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deserunt fuga a et totam, veniam officiis amet nam </p>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
-            <img src="../../../assets/proyecto1.png" alt="Proyecto1" class="img-fluid img-project">
+    <div class="col-lg-2">
+      <button
+        type="button"
+        class="btn btn-light"
+        routerLink="/newproyect"
+        *ngIf="isLogged"
+      >
+        Nuevos Proyectos
+      </button>
+    </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="d-flex justify-content-center" *ngFor="let proyectos of proyectos">
+          <div class="card" style="width: 28rem;">
+            <img src={{proyectos.img}} class="card-img-top" alt="img">
+            <div class="card-body">
+              <h5 class="card-title">{{proyectos.nombreP}}</h5>
+              <p class="card-text">{{proyectos.descripcionP}}</p>
+              <a href={{proyectos.urlP}} target="_blank" class="btn btn-primary">Ver mas</a>
+              <div >
+                <td *ngIf="isLogged">
+                  <button class="btn btn-light" routerLink="/editproyect/{{ proyectos.id }}">
+                    <i class="bi bi-pencil-fill me-1"></i>
+                  </button>
+                </td>
+                <td *ngIf="isLogged">
+                  <button class="btn btn-danger" (click)="delete(proyectos.id)">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
-</div>

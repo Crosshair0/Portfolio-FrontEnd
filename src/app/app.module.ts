@@ -28,6 +28,8 @@ import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './service/loading.interceptor';
+import { NewProyectoComponent } from './components/proyecto/new-proyecto.component';
+import { EditProyectoComponent } from './components/proyecto/edit-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { LoadingInterceptor } from './service/loading.interceptor';
     NewSkillComponent,
     EditAcercaDeComponent,
     SpinnerComponent,
+    NewProyectoComponent,
+    EditProyectoComponent,
   ],
   imports: [
     BrowserModule,

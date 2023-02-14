@@ -12,8 +12,11 @@
     text-align: justify;
 }
 
-h1,p{
+h1{
     color: #fefefe;
+}
+h5,p{
+    color:black;
 }
 
 .img-project{
