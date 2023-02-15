@@ -15,7 +15,6 @@ export class NewProyectoComponent implements OnInit {
   descripcionP: string = '';
   img:string = '';
   urlP:string = '';
-  selectedFile: File = null;
 
   constructor(
     private proyectosService: ProyectoService,
