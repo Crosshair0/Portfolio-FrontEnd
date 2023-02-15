@@ -63,10 +63,12 @@ import { EditProyectoComponent } from './components/proyecto/edit-proyecto.compo
     FormsModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    
   ],
   providers: [interceptorProvider,
   {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
 import { Proyecto } from 'src/app/models/proyecto';
 import { ImageService } from 'src/app/service/image.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
@@ -12,34 +10,42 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./new-proyecto.component.css']
 })
 export class NewProyectoComponent implements OnInit {
+  id?:number;
   nombreP: string = '';
   descripcionP: string = '';
   img:string = '';
   urlP:string = '';
-  selectedFile: any;
-  downloadURL!: Observable<string>;
-  showProgressBar = false;
+  selectedFile: File = null;
 
-  constructor(private storage: AngularFire) {}
+  constructor(
+    private proyectosService: ProyectoService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute, public imageService: ImageService
+  ) {}
 
   ngOnInit(): void {}
 
-  onFileSelected(event: any): void {
-    this.selectedFile = event.target.files[0];
+  onCreate(): void {
+    const proyecto = new Proyecto(this.nombreP, this.descripcionP, this.img, this.urlP);
+    this.proyectosService.save(proyecto).subscribe({
+      next: data => {
+        alert('Proyecto añadida');
+        this.router.navigate(['']);
+      },
+      error: err => {
+        alert('Ha ocurrido un error al añadir el proyecto');
+        this.router.navigate(['']);
+      }
+    });
+    
   }
 
-  onUpload(): void {
-    this.showProgressBar = true;
-    const filePath = `images/${new Date().getTime()}_${this.selectedFile.name}`;
-    const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(filePath, this.selectedFile);
-    task.snapshotChanges().pipe(
-      finalize(() => {
-        this.downloadURL = fileRef.getDownloadURL();
-        this.showProgressBar = false;
-      })
-    ).subscribe();
+  uploadImage($event:any){
+    const id = this.activatedRoute.snapshot.params['id'];
+    const name = "proyecto_" + id;
+    this.imageService.uploadImage($event, name)
   }
 }
-}
+
+
 

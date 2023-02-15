@@ -31,5 +31,6 @@ export class NewExperienciaComponent implements OnInit {
         this.router.navigate(['']);
       }
     });
+    
   }
 }

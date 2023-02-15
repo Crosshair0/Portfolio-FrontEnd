@@ -26,7 +26,7 @@
 
               <input type="text" name="urlP" id="urlP" class="formStyle form-control" placeholder="Url del repositorio (requerido)" [(ngModel)]="urlP" required />
 
-              <input type="file" name="img" id="img" class="formStyle form-control" [(ngModel)]="img" (change)="onFileSelected($event)" accept=".jpg, .jpeg, .png"/>
+              <input type="file" name="img" id="img" class="formStyle form-control" [(ngModel)]="img" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png"/>
               
               <div class="imagen mb-5">
                 <img [src]="imageService.url" width="100px">
