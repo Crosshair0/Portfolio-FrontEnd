@@ -1,34 +1,45 @@
-<div class="area" >
+<!--Fondo aniamdo usando listas-->
+<div class="area">
   <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div >
-<div class="container " *ngIf="expLab">
-    <div class="row">
-        <h1 class="fixed-top">
-            Editar Experiencia
-          </h1>
-          
-          <div class="bg-dark p-5 rounded-5 fixed-top" id="background" >
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-              <input type="text" name="nombreExp" id="nombreExp" class="formStyle form-control" placeholder="Nombre de la experiencia (requerido)" [(ngModel)]="expLab.nombreExp" required />
-              <input type="text" name="descripcionExp" class="formStyle form-control" placeholder="Descripcion de la exoeriencia (requerido)" [(ngModel)]="expLab.descripcionExp" required />
-              <button type="submit" class="btn btn-light">
-                              Agregar Experiencia 
-                          </button>
-                          <a href="/.." class="btn btn-light ms-4">Volver</a>
-            </form>
-          </div>
-    </div>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 </div>
+<!------------------------------------------------------->
+<div class="container" *ngIf="expLab">
+  <div class="row">
+    <h1 class="fixed-top">Editar Experiencia</h1>
 
-
+    <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <input
+          type="text"
+          name="nombreExp"
+          id="nombreExp"
+          class="formStyle form-control"
+          placeholder="Nombre de la experiencia (requerido)"
+          [(ngModel)]="expLab.nombreExp"
+          required
+        />
+        <input
+          type="text"
+          name="descripcionExp"
+          class="formStyle form-control"
+          placeholder="Descripcion de la exoeriencia (requerido)"
+          [(ngModel)]="expLab.descripcionExp"
+          required
+        />
+        <button type="submit" class="btn btn-light">Agregar Experiencia</button>
+        <a href="/.." class="btn btn-light ms-4">Volver</a>
+      </form>
+    </div>
+  </div>
+</div>

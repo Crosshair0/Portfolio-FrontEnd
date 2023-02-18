@@ -1,35 +1,45 @@
-<div class="area" >
+<!--Fondo animado usando listas-->
+<div class="area">
   <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div >
-<div class="container" *ngIf="educacion">
-    <div class="row">
-        <h1 class="fixed-top">
-            Editar Educacion
-          </h1>
-          
-          <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-              <input type="text" name="nombreE" id="nombreE" class="formStyle form-control" placeholder="Nombre de los estudios (requerido)" [(ngModel)]="educacion.nombreE" required />
-              <input type="text" name="descripcionEl" class="formStyle form-control" placeholder="Descripcion de los estudios (requerido)" [(ngModel)]="educacion.descripcionE" required />
-              <button type="submit" class="btn btn-light">
-                              Agregar Educacion 
-                          </button>
-                          <a href="/.." class="btn btn-light ms-4">Volver</a>
-            </form>
-          </div>
-    </div>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 </div>
+<!--------------------------------------------------------------------->
+<div class="container" *ngIf="educacion">
+  <div class="row">
+    <h1 class="fixed-top">Editar Educacion</h1>
 
-
-
+    <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <input
+          type="text"
+          name="nombreE"
+          id="nombreE"
+          class="formStyle form-control"
+          placeholder="Nombre de los estudios (requerido)"
+          [(ngModel)]="educacion.nombreE"
+          required
+        />
+        <input
+          type="text"
+          name="descripcionEl"
+          class="formStyle form-control"
+          placeholder="Descripcion de los estudios (requerido)"
+          [(ngModel)]="educacion.descripcionE"
+          required
+        />
+        <button type="submit" class="btn btn-light">Agregar Educacion</button>
+        <a href="/.." class="btn btn-light ms-4">Volver</a>
+      </form>
+    </div>
+  </div>
+</div>

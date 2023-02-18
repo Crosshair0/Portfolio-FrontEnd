@@ -1,41 +1,71 @@
-<div class="area" >
+<!-- Fondo animado usando listas -->
+<div class="area">
   <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div >
-<div class="container ">
-    <div class="row">
-        <h1 class="fixed-top">
-            Añadir Proyecto
-          </h1>
-          
-          <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-              <input type="text" name="nombreP" id="nombreP" class="formStyle form-control" placeholder="Nombre de la experiencia (requerido)" [(ngModel)]="nombreP" required />
-              
-              <input type="text" name="descripcionP" id="descripcionP" class="formStyle form-control" placeholder="Descripcion de la exoeriencia (requerido)" [(ngModel)]="descripcionP" required />
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+<!----------------------------------------------------------->
+<div class="container">
+  <div class="row">
+    <h1 class="fixed-top">Añadir Proyecto</h1>
 
-              <input type="text" name="urlP" id="urlP" class="formStyle form-control" placeholder="Url del repositorio (requerido)" [(ngModel)]="urlP" required />
+    <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
+      <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <input
+          type="text"
+          name="nombreP"
+          id="nombreP"
+          class="formStyle form-control"
+          placeholder="Nombre de la experiencia (requerido)"
+          [(ngModel)]="nombreP"
+          required
+        />
 
-              <input type="file" name="img" id="img" class="formStyle form-control" [(ngModel)]="img" (change)="uploadProyectoImg($event)" accept=".jpg, .jpeg, .png"/>
-              
-              <div class="imagen mb-5">
-                <img [src]="imageService.url" width="100px">
-                </div>
-              <button type="submit" class="btn btn-light">
-                              Agregar Proyecto 
-                          </button>
-                          <a href="/.." class="btn btn-light ms-4">Volver</a>
-            </form>
-          </div>
+        <input
+          type="text"
+          name="descripcionP"
+          id="descripcionP"
+          class="formStyle form-control"
+          placeholder="Descripcion de la exoeriencia (requerido)"
+          [(ngModel)]="descripcionP"
+          required
+        />
+
+        <input
+          type="text"
+          name="urlP"
+          id="urlP"
+          class="formStyle form-control"
+          placeholder="Url del repositorio (requerido)"
+          [(ngModel)]="urlP"
+          required
+        />
+
+        <input
+          type="file"
+          name="img"
+          id="img"
+          class="formStyle form-control"
+          [(ngModel)]="img"
+          (change)="uploadProyectoImg($event)"
+          accept=".jpg, .jpeg, .png"
+        />
+
+        <div class="imagen mb-5">
+          <img [src]="imageService.url" width="100px" />
+        </div>
+        <button type="submit" class="btn btn-light">Agregar Proyecto</button>
+        <a href="/.." class="btn btn-light ms-4">Volver</a>
+      </form>
     </div>
+  </div>
 </div>

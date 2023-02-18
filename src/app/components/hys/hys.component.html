@@ -1,16 +1,25 @@
 <div class="row">
-
   <h1>Hard & Soft Skills</h1>
   <div class="">
-    <button type="button" routerLink="/newskill" class="btn btn-light" *ngIf="isLogged">Nueva Habilidad</button>
+    <button
+      type="button"
+      routerLink="/newskill"
+      class="btn btn-light"
+      *ngIf="isLogged"
+    >
+      Nueva Habilidad
+    </button>
   </div>
-  <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
+  <div
+    class="text-center col-sm-4 col-md-4 col-lg-4 circulo"
+    *ngFor="let skill of skill"
+  >
     <circle-progress
-      [percent]="(skill.porcentaje)"
+      [percent]="skill.porcentaje"
       [radius]="100"
       [imageSrc]="''"
       [showSubtitle]="false"
-      [title]="(skill.nombre)"
+      [title]="skill.nombre"
       [titleColor]="'#ffff'"
       [titleFontSize]="'30'"
       [showImage]="false"
@@ -20,12 +29,12 @@
       [showUnits]="true"
       [outerStrokeWidth]="10"
       [innerStrokeWidth]="5"
-      [outerStrokeColor]="'#C70039'"
+      [outerStrokeColor]="'#ffff'"
       [innerStrokeColor]="'#BCBFC6'"
       [animation]="true"
       [animationDuration]="500"
     ></circle-progress>
-    <div >
+    <div>
       <td *ngIf="isLogged">
         <button class="btn btn-light" routerLink="/edithys/{{ skill.id }}">
           <i class="bi bi-pencil-fill me-1"></i>
@@ -37,6 +46,5 @@
         </button>
       </td>
     </div>
-    
   </div>
 </div>

@@ -6,27 +6,25 @@ import { EducacionService } from 'src/app/service/educacion.service';
 @Component({
   selector: 'app-neweducacion',
   templateUrl: './neweducacion.component.html',
-  styleUrls: ['./neweducacion.component.css']
+  styleUrls: ['./neweducacion.component.css'],
 })
 export class NeweducacionComponent {
-nombreE: string;
-descripcionE: string;
+  nombreE: string;
+  descripcionE: string;
 
-constructor(private educacionS: EducacionService, private router: Router){}
+  constructor(private educacionS: EducacionService, private router: Router) {}
 
-
-
-onCreate():void{
-  const educacion = new Educacion(this.nombreE, this.descripcionE);
-  this.educacionS.save(educacion).subscribe(
-    data=>{
-      alert("La Educacion fue añadida correctamente");
-      this.router.navigate([''])
-    }, err=>{
-      alert("Ha ocurrido un error al añadir educacion");
-      this.router.navigate(['']);
-    }
-  )
-}
-
+  onCreate(): void {
+    const educacion = new Educacion(this.nombreE, this.descripcionE);
+    this.educacionS.save(educacion).subscribe(
+      (data) => {
+        alert('La Educacion fue añadida correctamente');
+        this.router.navigate(['']);
+      },
+      (err) => {
+        alert('Ha ocurrido un error al añadir educacion');
+        this.router.navigate(['']);
+      }
+    );
+  }
 }

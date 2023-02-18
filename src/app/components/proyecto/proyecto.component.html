@@ -1,40 +1,50 @@
 <div class="row">
-    <h1>Proyectos Realizados:</h1>
-    <div class="col-lg-2">
-      <button
-        type="button"
-        class="btn btn-light"
-        routerLink="/newproyect"
-        *ngIf="isLogged"
-      >
-        Nuevos Proyectos
-      </button>
-    </div>
-    </div>
+  <h1>Proyectos Realizados:</h1>
+  <div class="col-lg-2">
+    <button
+      type="button"
+      class="btn btn-light"
+      routerLink="/newproyect"
+      *ngIf="isLogged"
+    >
+      Nuevos Proyectos
+    </button>
+  </div>
+</div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="d-flex justify-content-center" *ngFor="let proyectos of proyectos">
-          <div class="card" style="width: 28rem;">
-            <img src={{proyectos?.img}} class="card-img-top" alt="img">
-            <div class="card-body text-center bg-dark ">
-              <h5 class="card-title text-bg-dark mb-3">{{proyectos.nombreP}}</h5>
-              <p class="card-text text-bg-dark mb-3">{{proyectos.descripcionP}}</p>
-              
-              <div class="d-flex justify-content-evenly mt-2 " >
-                
-                <td *ngIf="isLogged">
-                  <button class="btn btn-light" routerLink="/editproyect/{{ proyectos.id }}">
-                    <i class="bi bi-pencil-fill me-1"></i>
-                  </button>
-                </td>
-                <a href={{proyectos.urlP}} target="_blank" class="btn btn-secondary">Ver mas</a>
-                <td *ngIf="isLogged">
-                  <button class="btn btn-danger" (click)="delete(proyectos.id)">
-                    <i class="bi bi-trash-fill"></i>
-                  </button>
-                </td>
-              </div>
-            </div>
-          </div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div
+    class="d-flex justify-content-center"
+    *ngFor="let proyectos of proyectos"
+  >
+    <div class="card" style="width: 28rem">
+      <img src="{{ proyectos?.img }}" class="card-img-top" alt="img" />
+      <div class="card-body text-center bg-dark">
+        <h5 class="card-title text-bg-dark mb-3">{{ proyectos.nombreP }}</h5>
+        <p class="card-text text-bg-dark mb-3">{{ proyectos.descripcionP }}</p>
+
+        <div class="d-flex justify-content-evenly mt-2">
+          <td *ngIf="isLogged">
+            <button
+              class="btn btn-light"
+              routerLink="/editproyect/{{ proyectos.id }}"
+            >
+              <i class="bi bi-pencil-fill me-1"></i>
+            </button>
+          </td>
+          <a
+            href="{{ proyectos.urlP }}"
+            target="_blank"
+            class="btn btn-secondary"
+            >Ver mas</a
+          >
+          <td *ngIf="isLogged">
+            <button class="btn btn-danger" (click)="delete(proyectos.id)">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </td>
         </div>
+      </div>
     </div>
+  </div>
+</div>

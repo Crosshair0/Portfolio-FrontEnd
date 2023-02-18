@@ -6,42 +6,40 @@ import { EducacionService } from 'src/app/service/educacion.service';
 @Component({
   selector: 'app-editeducacion',
   templateUrl: './editeducacion.component.html',
-  styleUrls: ['./editeducacion.component.css']
+  styleUrls: ['./editeducacion.component.css'],
 })
 export class EditeducacionComponent implements OnInit {
-educacion : Educacion = null;
+  educacion: Educacion = null;
 
-constructor(
-  private educacionS: EducacionService,
-  private activatedRoute: ActivatedRoute,
-  private router: Router
-  ){}
-
+  constructor(
+    private educacionS: EducacionService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-      const id = this.activatedRoute.snapshot.params['id'];
-      this.educacionS.detail(id).subscribe(
-        data => {
-          this.educacion = data;
-
-        }, err => {
-          alert("Error al modificar la educacion");
-          this.router.navigate([''])
-        }
-      )
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.educacionS.detail(id).subscribe(
+      (data) => {
+        this.educacion = data;
+      },
+      (err) => {
+        alert('Error al modificar la educacion');
+        this.router.navigate(['']);
+      }
+    );
   }
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.educacionS.update(id,this.educacion).subscribe(
-      data => {
+    this.educacionS.update(id, this.educacion).subscribe(
+      (data) => {
         this.router.navigate(['']);
-
-      }, err =>{
-        alert("Error al modificar la educacion");
+      },
+      (err) => {
+        alert('Error al modificar la educacion');
         this.router.navigate(['']);
       }
-    )
-
+    );
   }
 }

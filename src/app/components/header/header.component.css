@@ -1,6 +1,9 @@
 span{
     animation: blinker 1s linear infinite;
 }
+.navbar-custom {
+    background-color: #3f3f3f !important;
+}
 @keyframes blinker{
     50%{
         opacity: 0;

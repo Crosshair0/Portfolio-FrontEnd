@@ -1,42 +1,66 @@
-
-<div class="area" >
+<div class="area">
   <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div >
-<div class="container " *ngIf="persona">
-    <div class="row">
-        <h1 class="fixed-top">
-            Editar persona
-          </h1>
-          
-          <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" >
-              <input type="text" name="nombre" id="nombre" class="formStyle form-control" placeholder="Nombre (requerido)" [(ngModel)]="persona.nombre" required />
-              <input type="text" name="apellido" id="apellido" class="formStyle form-control" placeholder="Apellido (requerido)" [(ngModel)]="persona.apellido" required />
-              <input type="text" name="descripcion" id="descripcion" class="formStyle form-control" placeholder="descripcion" [(ngModel)]="persona.descripcion" required />
-              <label for="img">Selecciona una imagen</label>
-              <input type="file" name="img" id="img" class="formStyle form-control" [(ngModel)]="persona.img" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png"/>
-              <div class="imagen mb-5">
-                <img [src]="imageService.url" width="100px">
-            </div>
-              <button type="submit" class="btn btn-light">
-                              Agregar Persona
-                          </button>
-                          <a href="/.." class="btn btn-light ms-4">Volver</a>
-            </form>
-          </div>
-    </div>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 </div>
+<div class="container" *ngIf="persona">
+  <div class="row">
+    <h1 class="fixed-top">Editar persona</h1>
 
-
-
+    <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          class="formStyle form-control"
+          placeholder="Nombre (requerido)"
+          [(ngModel)]="persona.nombre"
+          required
+        />
+        <input
+          type="text"
+          name="apellido"
+          id="apellido"
+          class="formStyle form-control"
+          placeholder="Apellido (requerido)"
+          [(ngModel)]="persona.apellido"
+          required
+        />
+        <input
+          type="text"
+          name="descripcion"
+          id="descripcion"
+          class="formStyle form-control"
+          placeholder="descripcion"
+          [(ngModel)]="persona.descripcion"
+          required
+        />
+        <label for="img">Selecciona una imagen</label>
+        <input
+          type="file"
+          name="img"
+          id="img"
+          class="formStyle form-control"
+          [(ngModel)]="persona.img"
+          (change)="uploadImage($event)"
+          accept=".jpg, .jpeg, .png"
+        />
+        <div class="imagen mb-5">
+          <img [src]="imageService.url" width="100px" />
+        </div>
+        <button type="submit" class="btn btn-light">Agregar Persona</button>
+        <a href="/.." class="btn btn-light ms-4">Volver</a>
+      </form>
+    </div>
+  </div>
+</div>

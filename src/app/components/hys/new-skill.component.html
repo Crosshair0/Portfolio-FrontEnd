@@ -1,33 +1,46 @@
-<div class="area" >
+<!--Fondo animado usando listas-->
+<div class="area">
   <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div >
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+<!------------------------------------------------------------------->
+<div class="container">
+  <div class="row">
+    <h1 class="fixed-top">Añadir Habilidad</h1>
 
-<div class="container ">
-    <div class="row">
-        <h1 class="fixed-top">
-            Añadir Habilidad
-          </h1>
-          
-          <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-              <input type="text" name="nombre" id="nombre" class="formStyle form-control" placeholder="Nombre de la habilidad (requerido)" [(ngModel)]="nombre" required />
-              <input type="number" name="porcentaje" id="porcentaje" class="formStyle form-control" placeholder="Porcentaje de la habilidad (requerido)" [(ngModel)]="porcentaje" required />
-              <button type="submit" class="btn btn-light">
-                              Agregar Habilidad 
-                          </button>
-                          <a href="/.." class="btn btn-light ms-4">Volver</a>
-            </form>
-          </div>
+    <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
+      <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          class="formStyle form-control"
+          placeholder="Nombre de la habilidad (requerido)"
+          [(ngModel)]="nombre"
+          required
+        />
+        <input
+          type="number"
+          name="porcentaje"
+          id="porcentaje"
+          class="formStyle form-control"
+          placeholder="Porcentaje de la habilidad (requerido)"
+          [(ngModel)]="porcentaje"
+          required
+        />
+        <button type="submit" class="btn btn-light">Agregar Habilidad</button>
+        <a href="/.." class="btn btn-light ms-4">Volver</a>
+      </form>
     </div>
+  </div>
 </div>
