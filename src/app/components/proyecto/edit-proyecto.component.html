@@ -50,19 +50,6 @@
           [(ngModel)]="proyecto.urlP"
           required
         />
-        <label for="img">Selecciona una imagen</label>
-        <input
-          type="file"
-          name="img"
-          id="img"
-          class="formStyle form-control"
-          [(ngModel)]="proyecto.img"
-          (change)="uploadProyectoImg($event)"
-          accept=".jpg, .jpeg, .png"
-        />
-        <div class="imagen mb-5">
-          <img [src]="imageService.url" width="100px" />
-        </div>
         <button type="submit" class="btn btn-light">Agregar Proyecto</button>
         <a href="/.." class="btn btn-light ms-4">Volver</a>
       </form>

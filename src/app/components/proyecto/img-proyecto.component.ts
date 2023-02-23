@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/models/proyecto';
 import { ImageService } from 'src/app/service/image.service';
@@ -6,11 +6,11 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
 import { v4 } from 'uuid';
 
 @Component({
-  selector: 'app-edit-proyecto',
-  templateUrl: './edit-proyecto.component.html',
-  styleUrls: ['./edit-proyecto.component.css']
+  selector: 'app-img-proyecto',
+  templateUrl: './img-proyecto.component.html',
+  styleUrls: ['./img-proyecto.component.css']
 })
-export class EditProyectoComponent implements OnInit {
+export class ImgProyectoComponent {
   proyecto : Proyecto = null;
 
   constructor(private activatedRoute: ActivatedRoute, private proyectoService:ProyectoService,private router:Router, public imageService: ImageService){}
@@ -29,6 +29,7 @@ export class EditProyectoComponent implements OnInit {
   }
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
+    this.proyecto.img = this.imageService.url
     this.proyectoService.update(id,this.proyecto).subscribe(
       data => {
         this.router.navigate(['']);
@@ -39,5 +40,10 @@ export class EditProyectoComponent implements OnInit {
       }
     )
 
+  }
+  ProyectoImg($event:any){
+    const id = this.activatedRoute.snapshot.params['id'];
+    const name = "proyectoImg_" + id;
+    this.imageService.ProyectoImg($event, name)
   }
 }

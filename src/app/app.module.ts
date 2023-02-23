@@ -30,7 +30,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './service/loading.interceptor';
 import { NewProyectoComponent } from './components/proyecto/new-proyecto.component';
 import { EditProyectoComponent } from './components/proyecto/edit-proyecto.component';
-
+import { v4 as uuid } from 'uuid';
+import { ImgProyectoComponent } from './components/proyecto/img-proyecto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +55,7 @@ import { EditProyectoComponent } from './components/proyecto/edit-proyecto.compo
     SpinnerComponent,
     NewProyectoComponent,
     EditProyectoComponent,
+    ImgProyectoComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,6 @@ import { EditProyectoComponent } from './components/proyecto/edit-proyecto.compo
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
-    
   ],
   providers: [interceptorProvider,
   {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}],

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/models/proyecto';
 import { ImageService } from 'src/app/service/image.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
+import { v4 } from 'uuid';
 
 @Component({
   selector: 'app-new-proyecto',
@@ -13,7 +14,7 @@ export class NewProyectoComponent implements OnInit {
   id?:number;
   nombreP: string = '';
   descripcionP: string = '';
-  img:string = '';
+  img:string = ' ';
   urlP:string = '';
 
   constructor(
@@ -37,12 +38,6 @@ export class NewProyectoComponent implements OnInit {
       }
     });
     
-  }
-
-  uploadProyectoImg($event:any){
-    const id = this.activatedRoute.snapshot.params['id'];
-    const name = "proyecto_" + id;
-    this.imageService.uploadProyectoImg($event, name)
   }
 }
 

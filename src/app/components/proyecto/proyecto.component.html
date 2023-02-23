@@ -18,7 +18,11 @@
     *ngFor="let proyectos of proyectos"
   >
     <div class="card" style="width: 28rem">
-      <img src="{{ proyectos?.img }}" class="card-img-top" alt="img" />
+      <img *ngIf="proyectos.img" [src]="proyectos.img" alt="">
+      <a *ngIf="isLogged" class="btn btn-light  d-grid gap-2 d-md-block"
+      routerLink="/addimg/{{ proyectos.id }}"
+      >Añadir imagen
+    </a>
       <div class="card-body text-center bg-dark">
         <h5 class="card-title text-bg-dark mb-3">{{ proyectos.nombreP }}</h5>
         <p class="card-text text-bg-dark mb-3">{{ proyectos.descripcionP }}</p>
@@ -42,6 +46,7 @@
             <button class="btn btn-danger" (click)="delete(proyectos.id)">
               <i class="bi bi-trash-fill"></i>
             </button>
+            
           </td>
         </div>
       </div>
