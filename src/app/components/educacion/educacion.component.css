@@ -1,4 +1,4 @@
-.row{
+.edu-container{
     padding: 20px;
 
 }
@@ -7,4 +7,28 @@ td,h1{
 }
 h1,h3{
     display: inline;
+}
+.edu__h1{
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.edu__nombre, .edu__descripcion {
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+@media (max-width:424px){
+    .edu-container{
+        width: 120% !important;
+        left: 5%; 
+        position: relative;
+    }
+    .edu__nombre, .edu__descripcion {
+        font-size: 5vw;
+    }
+    .edit-button, .delete-button{
+        font-size: 4vw;
+        width: 100%;
+        padding: 12px;
+    }
 }

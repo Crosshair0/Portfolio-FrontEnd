@@ -8,3 +8,28 @@ td,h1{
 h1,h3{
     display: inline;
 }
+.exp__h1{
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.exp__nombre,.exp__descripcion{
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+}
+@media (max-width:424px){
+    @media (max-width:424px){
+        .exp-container{
+            width: 120% !important;
+            left: 5%; 
+            position: relative;
+        }
+        .exp__nombre, .edu__descripcion {
+            font-size: 5vw;
+        }
+        .edit-button, .delete-button{
+            font-size: 4vw;
+            width: 100%;
+            padding: 12px;
+        }
+    }
+}

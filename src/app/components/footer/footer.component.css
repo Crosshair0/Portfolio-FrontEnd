@@ -1,4 +1,4 @@
-.row{
+.footer-container{
     background-color: #3f3f3f;
 }
 footer{
@@ -8,4 +8,9 @@ footer{
     flex-direction: column;
     text-align: center;
     box-shadow: 2px -2px 5px #999;
+}
+@media (max-width:424px){
+    .footer-container{
+        width: 120.50% !important;
+    }
 }

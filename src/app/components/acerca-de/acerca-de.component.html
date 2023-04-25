@@ -1,4 +1,4 @@
-<div class="row">
+<div class="acercaDe-container row ">
   <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
     <img
       src="{{ persona?.img }}"
@@ -9,7 +9,7 @@
   </div>
 
   <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 pt-4">
-    <p id="nombre">{{ persona?.nombre }} {{ persona?.apellido }}</p>
+    <p class="fw-bold" id="nombre">{{ persona?.nombre }} {{ persona?.apellido }}</p>
     <p>Full Stack Developer Jr</p>
   </div>
 
@@ -17,8 +17,8 @@
     class="col-xs-12 col-sm-8 col-md-8 col-lg-8 d-flex justify-content-center align-items-center"
   >
     <span>
-      <h1>Acerca de mi</h1>
-      <p>{{ persona?.descripcion }}</p>
+      <h1 class="adm__h1">Acerca de mi</h1>
+      <p adm__p>{{ persona?.descripcion }}</p>
     </span>
   </div>
   <div>

@@ -22,3 +22,17 @@ h5,p{
 .img-project{
     box-shadow: 10px 10px 30px #000000;
 }
+.proyecto__h1{
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;;
+}
+@media (max-width:424px){
+    .proyecto-container{
+        position: relative;
+        left: 10%;
+    }
+    .proyecto{
+        position: relative !important;
+        left: 10% !important;
+    }
+}

@@ -3,6 +3,12 @@
     padding: 20px ;
     
 }
+.adm__h1{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.adm__p{
+    font-family: 'Roboto Condensed', sans-serif;
+}
 div{
     text-align: center;
 }
@@ -55,6 +61,23 @@ h1{
             list-style: none;
             left: 35%;
             top: auto;
+        }
+    }
+    @media (max-width:424px){
+        #fotodeperfil{
+            border-radius: 100%;
+            box-shadow: 3px 3px 3px #242222;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            left: 35%;
+            top: auto;
+        }
+        .acercaDe-container{
+            width: 120%;
+            position: relative;
+            left: 5%;
         }
     }
 }

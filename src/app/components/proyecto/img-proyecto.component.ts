@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/models/proyecto';
 import { ImageService } from 'src/app/service/image.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
-import { v4 } from 'uuid';
 
 @Component({
   selector: 'app-img-proyecto',

@@ -1,3 +1,5 @@
+
+
 form{
   color:#ffff
 }
@@ -53,6 +55,41 @@ color:#050000;
 position:relative;
 top:3px;
 }
+[type="file"] {
+  /* Style the color of the message that says 'No file chosen' */
+    color: #878787;
+  }
+  [type="file"]::-webkit-file-upload-button {
+    background: #ED1C1B;
+    border: 2px solid #ED1C1B;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    outline: none;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    transition: all 1s ease;
+  }
+  
+  [type="file"]::-webkit-file-upload-button:hover {
+    background: #fff;
+    border: 2px solid #535353;
+    color: #000;
+  }
+  
+  /* GENERAL STYLING OF PAGE — NOT APPLICABLE TO EXAMPLE */
+  body {
+    padding: 20px;
+  }
+  
+  /* GENERAL STYLING OF PAGE — NOT APPLICABLE TO EXAMPLE */
+  body {
+    padding: 20px;
+  }
+
+
+
 
 /*To remove the outline that appears on clicking the input textbox*/
 input:focus {
@@ -223,4 +260,30 @@ body{
       border-radius: 50%;
   }
 
+}
+@media (max-width:424px){
+  .acercade-h1{
+    font-size: 8.5vw;
+  }
+  .form-container{
+    width: 70vw;
+    height: 115vw;
+    
+  }
+  .form-container form input{
+    width: 50vw;
+    height: 10vw;
+   }
+   .buttons button,a {
+    width: 20vw;
+   }
+}
+@media (max-width: 767px) and (min-width: 425px){
+  .form-container{
+    width: 80%;
+    
+  }
+ .form-container form input{
+  width: 200%;
+ }
 }

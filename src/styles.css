@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 html {
   height:100%;
@@ -11,6 +11,7 @@ body {
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, rgb(55, 74, 180) 50%, rgb(3, 21, 158) 50%);
+  
   bottom:0;
   left:-50%;
   opacity:.5;

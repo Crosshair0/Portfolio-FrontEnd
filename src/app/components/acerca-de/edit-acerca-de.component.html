@@ -14,10 +14,10 @@
 </div>
 <div class="container" *ngIf="persona">
   <div class="row">
-    <h1 class="fixed-top">Editar persona</h1>
+    <h1 class="acercade-h1 fixed-top">Editar persona</h1>
 
-    <div class="bg-dark p-5 rounded-5 fixed-top" id="background">
-      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <div class="form-container bg-dark p-5 rounded-5 fixed-top" id="background">
+      <form class="col-6" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
         <input
           type="text"
           name="nombre"
@@ -45,21 +45,20 @@
           [(ngModel)]="persona.descripcion"
           required
         />
-        <label for="img">Selecciona una imagen</label>
-        <input
-          type="file"
+        <label class="file-selector mb-2" for="img"
+          >Selecciona una imagen</label
+        >
+          <input type="file" type="file"
           name="img"
           id="img"
           class="formStyle form-control"
           [(ngModel)]="persona.img"
           (change)="uploadImage($event)"
-          accept=".jpg, .jpeg, .png"
-        />
-        <div class="imagen mb-5">
-          <img [src]="imageService.url" width="100px" />
+          accept=".jpg, .jpeg, .png" />
+        <div class="buttons">
+          <button type="submit" class="btn btn-light">Agregar Persona</button>
+          <a href="/.." class="btn btn-light ms-2">Volver</a>
         </div>
-        <button type="submit" class="btn btn-light">Agregar Persona</button>
-        <a href="/.." class="btn btn-light ms-4">Volver</a>
       </form>
     </div>
   </div>

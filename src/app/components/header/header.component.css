@@ -9,3 +9,8 @@ span{
         opacity: 0;
     }
 }
+@media (max-width:424px){
+    .mynavbar{
+        width: 121% !important;
+    }
+}
